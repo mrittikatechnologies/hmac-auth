@@ -19,6 +19,7 @@ export interface RequestOptions {
 }
 
 export interface WorkerResponse<T> {
+  ok: boolean;
   data: T | null;
   error: string | null;
   status: number;
@@ -53,6 +54,7 @@ export function createWorkerClient(config: WorkerClientConfig) {
 
       if (!res.ok) {
         return {
+          ok: false,
           data: null,
           error: `Worker responded with ${res.status}`,
           status: res.status,
@@ -60,11 +62,11 @@ export function createWorkerClient(config: WorkerClientConfig) {
       }
 
       const data = (await res.json()) as T;
-      return { data, error: null, status: res.status };
+      return { ok: true, data, error: null, status: res.status };
 
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Unknown fetch error';
-      return { data: null, error: message, status: 500 };
+      return { ok: false, data: null, error: message, status: 500 };
     }
   }
 
