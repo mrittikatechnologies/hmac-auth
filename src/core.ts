@@ -1,4 +1,5 @@
 // packages/hmac-auth/src/core.ts
+// # crypto logic — unchanged, works everywhere
 
 export const REPLAY_WINDOW_SEC = 120;
 export const NONCE_REGEX = /^[a-f0-9]{32}$/;

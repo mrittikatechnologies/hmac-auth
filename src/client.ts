@@ -1,4 +1,6 @@
 // packages/hmac-auth/src/client.ts
+// # client logic — works in Node, Bun, and Cloudflare Workers
+// # signing — unchanged, works everywhere
 
 import {
   generateNonce,
