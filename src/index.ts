@@ -15,6 +15,9 @@ export {
 export { createWorkerClient } from './client';
 export type { WorkerClientConfig, RequestOptions, WorkerResponse } from './client';
 
+// Encryption 
+export { importEncryptionKey, encryptData, decryptData } from './encryption';
+
 // Adapter interface + built-in adapters
 export type { NonceStore } from './adapters/types';
 export { CloudflareKVStore } from './adapters/cloudflare-kv';
