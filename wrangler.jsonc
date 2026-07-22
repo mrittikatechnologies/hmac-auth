@@ -1,0 +1,14 @@
+{
+  "name": "hmac-auth",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-01-01",
+  "vars": {
+    "HMAC_SECRET": "228514c14a9d156b27f922194a6a5484d9599026b9ba99c11741bae929ec7f92"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "NONCE_STORE",
+      "id": "abcd1234efgh5678"
+    }
+  ]
+}
